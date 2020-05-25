@@ -15,6 +15,7 @@ import android.os.Bundle;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 import android.util.Base64;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -177,7 +178,6 @@ public class PopupActivity extends AppCompatActivity implements EasyPermissions.
 
     }
 
-
     @Override
     public void onBackPressed() {
         Intent returnIntent = new Intent();
@@ -188,7 +188,6 @@ public class PopupActivity extends AppCompatActivity implements EasyPermissions.
         setResult(Activity.RESULT_OK,returnIntent);
         finish();
     }
-
 
     @Override
     public void onPermissionsDenied(int requestCode, List<String> perms) {

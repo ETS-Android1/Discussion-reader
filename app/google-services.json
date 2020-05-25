@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "486387895769",
+    "firebase_url": "https://discussrater.firebaseio.com",
+    "project_id": "discussrater",
+    "storage_bucket": "discussrater.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:486387895769:android:121573b8508caef84e1dc8",
+        "android_client_info": {
+          "package_name": "n3vashis.example.discussrater"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "486387895769-d950rd088phajsaelfaqs4pv62or7cct.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "n3vashis.example.discussrater",
+            "certificate_hash": "ae4f97166ddfce52def3075d035971e68cbe3e3b"
+          }
+        },
+        {
+          "client_id": "486387895769-1h36dh21077nma6t902003m55svfa82e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyORCXOuw_yJTkC0J-3rqRUzT1JhcYB_U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "486387895769-1h36dh21077nma6t902003m55svfa82e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

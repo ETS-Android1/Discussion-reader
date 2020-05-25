@@ -6,8 +6,9 @@
     android:layout_height="wrap_content"
     tools:context=".MainActivity">
     <item
+        android:id="@+id/chat"
         android:icon="@drawable/ic_forum_black_24dp"
-        android:title="Item"
+        android:title="chat"
         app:showAsAction="always" />
     <item
         android:id="@+id/poll"

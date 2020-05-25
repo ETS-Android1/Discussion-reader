@@ -6,23 +6,26 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
+
+import java.util.ArrayList;
 
 import n3vashis.example.discussrater.ui.BookObject;
 
+//adapter for the viewpager - holds images of the books
 class CustomPagerAdapter extends PagerAdapter {
     private Context mContext;
 
+    private ArrayList<View> views = new ArrayList<View>();
     public CustomPagerAdapter(Context context) {
         mContext = context;
     }
 
     @Override
     public Object instantiateItem(ViewGroup collection, int position) {
-        BookObject modelObject = BookObject.values()[position];
-        LayoutInflater inflater = LayoutInflater.from(mContext);
-        ViewGroup layout = (ViewGroup) inflater.inflate(modelObject.getLayoutResId(), collection, false);
-        collection.addView(layout);
-        return layout;
+        View v = views.get (position);
+        collection.addView (v);
+        return v;
     }
 
     @Override
@@ -32,7 +35,7 @@ class CustomPagerAdapter extends PagerAdapter {
 
     @Override
     public int getCount() {
-        return BookObject.values().length;
+        return views.size();
     }
 
     @Override
@@ -40,10 +43,41 @@ class CustomPagerAdapter extends PagerAdapter {
         return view == object;
     }
 
+
     @Override
-    public CharSequence getPageTitle(int position) {
-        BookObject customPagerEnum = BookObject.values()[position];
-        return mContext.getString(customPagerEnum.getTitleResId());
+    public int getItemPosition (Object object)
+    {
+        int index = views.indexOf (object);
+        if (index == -1)
+            return POSITION_NONE;
+        else
+            return index;
+    }
+
+
+    public int addView (View v, int position)
+    {
+        views.add (position, v);
+        return position;
+    }
+
+    public int addView (View v)
+    {
+        return addView (v, views.size());
+    }
+
+    public int removeView (ViewPager pager, View v)
+    {
+        return removeView (pager, views.indexOf (v));
+    }
+
+    public int removeView (ViewPager pager, int position)
+    {
+        pager.setAdapter (null);
+        views.remove (position);
+        pager.setAdapter (this);
+
+        return position;
     }
 
 }

@@ -6,8 +6,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.provider.BaseColumns;
 
 public final class DbReader {
-    // To prevent someone from accidentally instantiating the contract class,
-    // make the constructor private.
     private DbReader() {
     }
 
